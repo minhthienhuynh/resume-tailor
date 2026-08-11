@@ -1,7 +1,7 @@
 {
   "name": "resume-tailor",
   "description": "Generate a tailored LaTeX resume (.tex/.pdf) from a job description, using your own master data and template. Analyzes the JD, asks clarifying questions only when your data doesn't resolve a decision, tailors skills/bullets to match, and builds + verifies the PDF (max 2 pages).",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Huynh Minh Thien"
   },

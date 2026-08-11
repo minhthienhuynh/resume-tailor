@@ -1,7 +1,7 @@
 ---
 description: Generate a tailored LaTeX resume (.tex/.pdf) from a job description, referencing the candidate's master data and a LaTeX template. Use when the user asks to create or tailor a resume/CV for a specific job description.
 argument-hint: "[jd-path-or-url]"
-allowed-tools: Read Write Edit AskUserQuestion WebFetch Bash(python3*) Bash(python*) Bash(py*) mcp__playwright__browser_navigate mcp__playwright__browser_snapshot mcp__playwright__browser_close
+allowed-tools: Read Write Edit AskUserQuestion WebFetch Bash(python3*) Bash(python*) Bash(py*) mcp__plugin_resume-tailor_playwright__browser_navigate mcp__plugin_resume-tailor_playwright__browser_snapshot mcp__plugin_resume-tailor_playwright__browser_close
 ---
 
 # resume-tailor:generate — tailor a resume to a job description
