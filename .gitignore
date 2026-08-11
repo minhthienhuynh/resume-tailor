@@ -6,3 +6,6 @@ __pycache__/
 *.aux
 *.log
 *.out
+
+# working notes, not part of the published plugin
+docs/superpowers/
