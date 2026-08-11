@@ -1,0 +1,107 @@
+% Default resume-tailor template.
+% Based on the r/EngineeringResumes community template
+% (https://old.reddit.com/r/EngineeringResumes/wiki/index), which itself
+% derives from Jake Gutierrez's popular LaTeX resume template.
+%
+% This file ships as-is with the plugin. resume-tailor:generate copies it
+% and fills in the candidate's real data -- it does not invent new
+% preamble/macros. See skills/generate/reference.md for the structure and
+% page-fit rules.
+
+\documentclass[11pt]{article}       % set main text size
+\usepackage[letterpaper,                % set paper size to letterpaper. change to a4paper for resumes outside of North America
+top=0.5in,                          % specify top page margin
+bottom=0.5in,                       % specify bottom page margin
+left=0.5in,                         % specify left page margin
+right=0.5in]{geometry}              % specify right page margin
+
+\usepackage{XCharter}               % set font. comment this line out (or swap for \usepackage{charter}) if XCharter isn't available
+\usepackage[T1]{fontenc}            % output encoding
+\usepackage[utf8]{inputenc}         % input encoding
+\usepackage{enumitem}               % enable lists for bullet points: itemize and \item
+\usepackage[hidelinks]{hyperref}    % format hyperlinks
+\usepackage{titlesec}               % enable section title customization
+\raggedright                        % disable text justification
+\pagestyle{empty}                   % disable page numbering
+
+% ensure PDF output will be all-Unicode and machine-readable (ATS-friendly)
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% format section headings: bolding, size, white space above and below
+\titleformat{\section}{\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule\vspace{-6.5pt}]
+
+% format bullet points: size, white space above and below, white space between bullets
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\setlist[itemize]{itemsep=-2pt, leftmargin=12pt, topsep=7pt} % tune these values if bullets need more/less breathing room
+
+% resume starts here
+\begin{document}
+
+% name
+\centerline{\Huge Candidate Name}
+
+\vspace{5pt}
+
+% contact information
+\centerline{\href{mailto:name@example.com}{name@example.com} | +1 (555) 555-5555 | \href{https://github.com/username}{github.com/username}}
+
+\vspace{-10pt}
+
+% Optional Summary section -- most resumes don't need one (see reference.md).
+% Only add when it clearly earns its space: highlighting seniority + a
+% JD-matching stack for an experienced candidate, or explaining a career
+% pivot. 2--3 sentences max, placed here (right after the header, before
+% Skills).
+%
+% \section*{Summary}
+% 2--3 sentence summary goes here.
+%
+% \vspace{-6.5pt}
+
+% skills section
+\section*{Skills}
+\textbf{Languages:} Language1, Language2, Language3 \\
+\textbf{Frameworks:} Framework1, Framework2 \\
+\textbf{Tools:} Tool1, Tool2, Tool3
+
+\vspace{-6.5pt}
+
+% experience section
+\section*{Experience}
+\textbf{Job Title,} {Company} -- City \hfill Month Year -- Present \\
+\textit{Project1 (Tech1, Tech2) --- Project2 (Tech3)} \\
+\vspace{-9pt}
+\begin{itemize}
+  \item \textbf{XYZ (use when a real number is confirmed):} Accomplished X as measured by Y by doing Z
+  \item \textbf{STAR (use for a qualitative result):} Situation Task Action Result -- past-tense action verb, no first-person pronouns
+  \item \textbf{CAR (another qualitative fallback):} Challenge Action Result
+\end{itemize}
+
+\textbf{Job Title,} {Company} -- City \hfill Month Year -- Month Year \\
+\textit{Project1 (Tech1, Tech2)} \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Each bullet: 1--2 lines, max one sentence. Don't let a bullet wrap onto the next line with only 1--4 words -- trim it instead
+  \item Start every bullet with a strong, past-tense action verb (led, built, designed, architected, optimized...)
+  \item Never fabricate a metric or a technology that isn't in the master data
+\end{itemize}
+
+\vspace{-18.5pt}
+
+% projects section (optional -- the more work experience the candidate has, the less relevant this section becomes)
+\section*{Projects}
+\textbf{Project Title} \hfill \href{https://github.com/username/project}{github.com/username/project} \\
+\vspace{-9pt}
+\begin{itemize}
+  \item Only list real projects with actual users/usage -- not mandatory school projects or tutorial-following exercises
+  \item Something that solves a real problem, is actively used, and isn't abandoned in a repo
+\end{itemize}
+
+\vspace{-18.5pt}
+
+% education section
+\section*{Education}
+\textbf{School} -- Degree \hfill Month Year
+
+\end{document}

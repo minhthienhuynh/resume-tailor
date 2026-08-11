@@ -1,0 +1,11 @@
+{
+  "name": "resume-tailor",
+  "description": "Generate a tailored LaTeX resume (.tex/.pdf) from a job description, using your own master data and template. Analyzes the JD, asks clarifying questions only when your data doesn't resolve a decision, tailors skills/bullets to match, and builds + verifies the PDF (max 2 pages).",
+  "author": {
+    "name": "Huynh Minh Thien"
+  },
+  "homepage": "https://github.com/minhthienhuynh/resume-tailor",
+  "repository": "https://github.com/minhthienhuynh/resume-tailor",
+  "license": "MIT",
+  "keywords": ["resume", "cv", "latex", "job-application", "career"]
+}

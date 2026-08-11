@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+
+# LaTeX build artifacts (build.py builds into a temp dir, but guard anyway)
+*.aux
+*.log
+*.out

@@ -1,0 +1,14 @@
+{
+  "name": "resume-tailor",
+  "owner": {
+    "name": "Huynh Minh Thien"
+  },
+  "description": "Self-hosted marketplace for the resume-tailor plugin.",
+  "plugins": [
+    {
+      "name": "resume-tailor",
+      "source": "./",
+      "description": "Generate a tailored LaTeX resume (.tex/.pdf) from a job description."
+    }
+  ]
+}
