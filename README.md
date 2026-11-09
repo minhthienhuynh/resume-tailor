@@ -20,6 +20,40 @@ Trung thực trên hết: skill không bao giờ bịa số liệu hay công ngh
 /plugin install resume-tailor@resume-tailor
 ```
 
+## Cài cho OpenCode
+
+Cài plugin qua OpenCode V2:
+
+```
+opencode plugin add github:minhthienhuynh/resume-tailor
+```
+
+Sau khi cài, ba command sau được đăng ký:
+
+- `/resume-tailor-init` — setup lần đầu cho mỗi project.
+- `/resume-tailor-generate <JD>` — tạo CV tailor theo JD (đường dẫn file hoặc URL).
+- `/resume-tailor-gen <JD>` — alias ngắn của lệnh trên.
+
+Bản OpenCode dùng chung `resume-tailor.config.json`, master data và template với bản Claude Code, nên bạn có thể chuyển qua lại giữa hai bản mà không cần cấu hình lại.
+
+Mặc định plugin bật Playwright để lấy JD từ các trang render bằng JavaScript. Muốn tắt, khai báo option trong cấu hình OpenCode:
+
+```jsonc
+{
+  "plugins": [
+    { "package": "github:minhthienhuynh/resume-tailor", "options": { "playwright": false } }
+  ]
+}
+```
+
+Cập nhật plugin:
+
+```
+opencode plugin update
+```
+
+Yêu cầu hệ thống giống bản Claude Code — xem mục [Yêu cầu hệ thống](#yêu-cầu-hệ-thống) ở trên (Tectonic/TeX Live, Python 3, pypdf, Node cho Playwright).
+
 ## Bắt đầu nhanh
 
 1. **Setup lần đầu cho mỗi project:**
