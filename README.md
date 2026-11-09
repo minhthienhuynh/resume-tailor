@@ -1,6 +1,6 @@
 # resume-tailor
 
-Plugin cho Claude Code giúp tạo CV/résumé LaTeX được tailor riêng theo từng job description (JD). Skill sẽ phân tích JD, chỉ hỏi lại khi dữ liệu của bạn chưa đủ để quyết định, tự tailor kỹ năng/bullet cho khớp JD, rồi build + verify PDF (tối đa 2 trang) trước khi báo hoàn thành.
+Plugin cho Claude Code và OpenCode giúp tạo CV/résumé LaTeX được tailor riêng theo từng job description (JD). Skill sẽ phân tích JD, chỉ hỏi lại khi dữ liệu của bạn chưa đủ để quyết định, tự tailor kỹ năng/bullet cho khớp JD, rồi build + verify PDF (tối đa 2 trang) trước khi báo hoàn thành.
 
 Trung thực trên hết: skill không bao giờ bịa số liệu hay công nghệ không có trong dữ liệu gốc của bạn. Mọi claim suy luận đều được báo lại để bạn xác nhận.
 
@@ -13,14 +13,50 @@ Trung thực trên hết: skill không bao giờ bịa số liệu hay công ngh
 - **`pypdf`** để verify PDF (`pip install pypdf`) — không có thì bỏ qua bước kiểm page count/clip, build vẫn chạy.
 - **Node.js** (để chạy Playwright MCP qua `npx`, dùng khi cần lấy JD từ URL render bằng JavaScript).
 
-## Cài đặt
+## Cài đặt cho Claude Code
 
 ```
 /plugin marketplace add minhthienhuynh/resume-tailor
 /plugin install resume-tailor@resume-tailor
 ```
 
+## Cài cho OpenCode
+
+Cài plugin qua OpenCode V2:
+
+```
+opencode plugin add github:minhthienhuynh/resume-tailor
+```
+
+Sau khi cài, ba command sau được đăng ký:
+
+- `/resume-tailor-init` — setup lần đầu cho mỗi project.
+- `/resume-tailor-generate <JD>` — tạo CV tailor theo JD (đường dẫn file hoặc URL).
+- `/resume-tailor-gen <JD>` — alias ngắn của lệnh trên.
+
+Bản OpenCode dùng chung `resume-tailor.config.json`, master data và template với bản Claude Code, nên bạn có thể chuyển qua lại giữa hai bản mà không cần cấu hình lại.
+
+Mặc định plugin bật Playwright để lấy JD từ các trang render bằng JavaScript. Muốn tắt, khai báo option trong cấu hình OpenCode:
+
+```jsonc
+{
+  "plugins": [
+    { "package": "github:minhthienhuynh/resume-tailor", "options": { "playwright": false } }
+  ]
+}
+```
+
+Cập nhật plugin:
+
+```
+opencode plugin update
+```
+
+Yêu cầu hệ thống giống bản Claude Code — xem mục [Yêu cầu hệ thống](#yêu-cầu-hệ-thống) ở trên (Tectonic/TeX Live, Python 3, pypdf, Node cho Playwright).
+
 ## Bắt đầu nhanh
+
+Người dùng OpenCode: dùng `/resume-tailor-init` và `/resume-tailor-generate <JD>` (dấu gạch ngang), xem mục [Cài cho OpenCode](#cài-cho-opencode).
 
 1. **Setup lần đầu cho mỗi project:**
 

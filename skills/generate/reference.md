@@ -1,8 +1,8 @@
-# resume-tailor:generate — bullet-writing, LaTeX & page-fit reference
+# resume-tailor generate — bullet-writing, LaTeX & page-fit reference
 
 Read this file when writing/editing bullets (STAR/XYZ/CAR), fitting a resume to the page limit, or debugging a build error.
 
-**Default template:** `${CLAUDE_PLUGIN_ROOT}/templates/engineering-resume.tex` (based on the r/EngineeringResumes community template). Every new resume copies this template (or the user's custom template from config) and fills in the candidate's data — never invent a new preamble/macro set.
+**Default template:** the plugin's `templates/engineering-resume.tex` (two directories above this skill's directory) (based on the r/EngineeringResumes community template). Every new resume copies this template (or the user's custom template from config) and fills in the candidate's data — never invent a new preamble/macro set.
 
 **Source guidance:** the r/EngineeringResumes wiki — https://www.reddit.com/r/EngineeringResumes/wiki/index/ (XYZ formula, exclusion list, ATS, length).
 
