@@ -1,6 +1,7 @@
 __pycache__/
 *.pyc
 .venv/
+node_modules/
 
 # LaTeX build artifacts (build.py builds into a temp dir, but guard anyway)
 *.aux

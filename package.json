@@ -1,0 +1,11 @@
+{
+  "name": "resume-tailor-opencode",
+  "version": "0.2.0",
+  "description": "OpenCode V2 plugin: tailor a LaTeX resume from a job description using your own master data and template.",
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "files": ["src", "skills", "scripts", "templates"],
+  "license": "MIT",
+  "scripts": { "test": "node --test test/*.test.ts" },
+  "dependencies": { "@opencode/plugin": "^2.2.6" }
+}
