@@ -1,6 +1,6 @@
 # resume-tailor
 
-Plugin cho Claude Code giúp tạo CV/résumé LaTeX được tailor riêng theo từng job description (JD). Skill sẽ phân tích JD, chỉ hỏi lại khi dữ liệu của bạn chưa đủ để quyết định, tự tailor kỹ năng/bullet cho khớp JD, rồi build + verify PDF (tối đa 2 trang) trước khi báo hoàn thành.
+Plugin cho Claude Code và OpenCode giúp tạo CV/résumé LaTeX được tailor riêng theo từng job description (JD). Skill sẽ phân tích JD, chỉ hỏi lại khi dữ liệu của bạn chưa đủ để quyết định, tự tailor kỹ năng/bullet cho khớp JD, rồi build + verify PDF (tối đa 2 trang) trước khi báo hoàn thành.
 
 Trung thực trên hết: skill không bao giờ bịa số liệu hay công nghệ không có trong dữ liệu gốc của bạn. Mọi claim suy luận đều được báo lại để bạn xác nhận.
 
@@ -13,7 +13,7 @@ Trung thực trên hết: skill không bao giờ bịa số liệu hay công ngh
 - **`pypdf`** để verify PDF (`pip install pypdf`) — không có thì bỏ qua bước kiểm page count/clip, build vẫn chạy.
 - **Node.js** (để chạy Playwright MCP qua `npx`, dùng khi cần lấy JD từ URL render bằng JavaScript).
 
-## Cài đặt
+## Cài đặt cho Claude Code
 
 ```
 /plugin marketplace add minhthienhuynh/resume-tailor
@@ -55,6 +55,8 @@ opencode plugin update
 Yêu cầu hệ thống giống bản Claude Code — xem mục [Yêu cầu hệ thống](#yêu-cầu-hệ-thống) ở trên (Tectonic/TeX Live, Python 3, pypdf, Node cho Playwright).
 
 ## Bắt đầu nhanh
+
+Người dùng OpenCode: dùng `/resume-tailor-init` và `/resume-tailor-generate <JD>` (dấu gạch ngang), xem mục [Cài cho OpenCode](#cài-cho-opencode).
 
 1. **Setup lần đầu cho mỗi project:**
 
