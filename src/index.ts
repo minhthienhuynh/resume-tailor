@@ -1,9 +1,10 @@
+import { dirname } from "node:path"
 import { fileURLToPath } from "node:url"
 import { Plugin } from "@opencode/plugin"
 import { loadRegisterInput } from "./load.ts"
 import { register } from "./register.ts"
 
-const pluginRoot = fileURLToPath(new URL("../", import.meta.url))
+const pluginRoot = dirname(fileURLToPath(import.meta.url))
 
 export default Plugin.define({
   id: "resume-tailor-opencode",

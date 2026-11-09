@@ -11,7 +11,7 @@ export interface TransformContext {
 export const OPENCODE_APPENDIX = `## OpenCode notes
 
 - Ask the user with the \`question\` tool. Every question always offers a free-form answer.
-- If the Playwright MCP is available, reach its tools through \`execute\` under the \`resume-tailor-playwright\` namespace (e.g. \`tools.resume_tailor_playwright.browser_navigate\`). If it is not available, use \`webfetch\` first and mention enabling Playwright only when the JD is JS-rendered.
+- If the Playwright MCP is available, reach its tools through \`execute\` under the \`resume-tailor-playwright\` namespace (e.g. \`tools["resume-tailor-playwright"].browser_navigate\`). If it is not available, use \`webfetch\` first and mention enabling Playwright only when the JD is JS-rendered.
 - Run \`build.py\` with the \`shell\` tool.
 - For multi-select questions, set \`multiple: true\` on the \`question\` tool input.`
 

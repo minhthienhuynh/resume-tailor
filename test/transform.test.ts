@@ -45,4 +45,9 @@ test("transformBody thay hết token Claude", () => {
   assert.match(out, /`shell`/)
   assert.match(out, /\/resume-tailor-init/)
   assert.match(out, /OpenCode notes/)
+  assert.equal(
+    out.includes('tools["resume-tailor-playwright"].browser_navigate'),
+    true,
+    "appendix phải dùng bracket notation cho namespace có dấu gạch ngang",
+  )
 })

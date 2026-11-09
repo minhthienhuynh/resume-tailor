@@ -66,6 +66,20 @@ test("đăng ký 3 command và inject nội dung skill", async () => {
   assert.match(calls.prompts[0].text, /Body text\./)
   assert.match(calls.prompts[0].text, /jd\.md/)
   assert.equal(calls.prompts[0].sessionID, "s1")
+  assert.equal(calls.prompts[0].delivery, "steer")
+
+  const alias = calls.commands.find((c) => c.name === "resume-tailor-gen")
+  await alias.execute({
+    sessionID: "s2",
+    prompt: { text: "jd2.md" },
+    delivery: { mode: "steer" },
+  })
+  assert.equal(calls.prompts.length, 2)
+  assert.match(calls.prompts[1].text, /resume-tailor-generate/)
+  assert.match(calls.prompts[1].text, /\/plugin\/skills\/generate/)
+  assert.match(calls.prompts[1].text, /jd2\.md/)
+  assert.equal(calls.prompts[1].sessionID, "s2")
+  assert.deepEqual(calls.prompts[1].delivery, { mode: "steer" })
 })
 
 test("playwright: false không đăng ký MCP", async () => {

@@ -36,10 +36,6 @@ export interface RegisterContext {
 }
 
 const MCP_NAME = "resume-tailor-playwright"
-const MCP_CONFIG = {
-  type: "local" as const,
-  command: ["npx", "-y", "@playwright/mcp@latest"],
-}
 
 const INIT_SKILL_ID = "resume-tailor-init"
 const GENERATE_SKILL_ID = "resume-tailor-generate"
@@ -161,7 +157,12 @@ export async function register(ctx: RegisterContext, input: RegisterInput): Prom
 
   if (input.playwright) {
     await ctx.mcp.transform((editor) => {
-      if (!editor.get(MCP_NAME)) editor.set(MCP_NAME, MCP_CONFIG)
+      if (!editor.get(MCP_NAME)) {
+        editor.set(MCP_NAME, {
+          type: "local",
+          command: ["npx", "-y", "@playwright/mcp@latest"],
+        })
+      }
     })
   }
 }

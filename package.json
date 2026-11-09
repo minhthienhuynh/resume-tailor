@@ -5,6 +5,7 @@
   "type": "module",
   "exports": { ".": "./src/index.ts" },
   "files": ["src", "skills", "scripts", "templates"],
+  "engines": { "node": ">=24" },
   "license": "MIT",
   "scripts": { "test": "node --test test/*.test.ts" },
   "dependencies": { "@opencode/plugin": "^2.2.6" }
