@@ -1,6 +1,6 @@
 # Master Data — <Candidate Name>
 
-*This is your single source of truth for `resume-tailor:generate`. Fill in real
+*This is your single source of truth for the resume-tailor generate command. Fill in real
 information only — never invent numbers, technologies, or claims you can't
 back up in an interview. If a metric isn't confirmed, leave it out; the skill
 will use a qualitative description instead of fabricating a number.*
@@ -19,7 +19,7 @@ Full name · date of birth (optional) · location
 ## Timeline
 
 List every job in reverse-chronological order with **real** start/end dates.
-Mark any job with a real duration of ≤ 1 year — `resume-tailor:generate` will
+Mark any job with a real duration of ≤ 1 year — the resume-tailor generate command will
 ask you whether to keep or drop each one. If you know in advance you want a
 job excluded regardless of the question, mark it with `<!-- exclude -->`.
 
@@ -85,7 +85,7 @@ e.g. English: reads/writes documentation and code comfortably
 ---
 
 **Honesty reminder:** every claim on the generated resume should trace back
-to something written here. If `resume-tailor:generate` infers something
+to something written here. If the resume-tailor generate command infers something
 (e.g. inferring a library from a framework you mentioned), it will flag that
 inference for you to confirm — it will not add anything you haven't
 confirmed is real.
